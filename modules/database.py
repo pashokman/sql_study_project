@@ -76,6 +76,7 @@ class Database:
 
         return make_data_as_a_table(record, [identify_column, calc_avg_column, result_column])
     
+    
     def get_characters_by_gender_hometown_energy_Projection(self, database_name, gender, hometown, energy_Projection):
         query = f'''SELECT * FROM {database_name}\
                     WHERE gender = "{gender}"\
@@ -84,4 +85,6 @@ class Database:
         
         record = self.query_to_execute(query)
 
-        return make_data_as_a_table(record, [gender, hometown, energy_Projection])
+        columns = self.get_tables_column_names(database_name)
+
+        return make_data_as_a_table(record, [*columns])

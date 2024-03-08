@@ -19,6 +19,6 @@ def test_get_smartest_characters(database):
     print(data)
 
 
-# def test_get_characters_by_gender_hometown_energy_Projection(database):
-#     data = database.get_characters_by_gender_hometown_energy_Projection('marvels', 'Female', 'USA', 7)
-#     print(data)
+def test_get_characters_by_gender_hometown_energy_Projection(database):
+    data = database.get_characters_by_gender_hometown_energy_Projection('marvels', 'Female', 'USA', 7)
+    print(data)
