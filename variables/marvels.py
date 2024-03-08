@@ -1,4 +1,4 @@
-marvels_table = """CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
+MARVELS_TABLE = """CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     name TEXT,
     popularity INTEGER,
     alignment TEXT,

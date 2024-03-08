@@ -35,7 +35,7 @@ class Database:
             print(f'\nException message: {e}')
 
     
-    def get_tables_column_names(self, table_name):
+    def get_table_columns_names(self, table_name):
         query = f'PRAGMA table_info({table_name});'
         self.cursor.execute(query)
         columns = [column[1] for column in self.cursor.fetchall()]
@@ -47,11 +47,18 @@ class Database:
         query = f'SELECT * FROM {table_name};'
         record = self.query_to_execute(query)
 
-        columns = self.get_tables_column_names(table_name)
-        
-        return make_data_as_a_table(record, columns)
-        # return record
+        return record
 
+
+    def result_with_all_table_columns_names(self, data, database_name):
+        columns = self.get_table_columns_names(database_name)
+        
+        return make_data_as_a_table(data, [*columns])
+    
+
+    def result_with_specific_column_names(self, data, *args):
+        return make_data_as_a_table(data, [*args])
+    
 
     def get_avg_column_value(self, table_name, column):
         query = f'SELECT ROUND(AVG({column})) FROM {table_name};'
@@ -74,9 +81,9 @@ class Database:
         
         record = self.query_to_execute(query)
 
-        return make_data_as_a_table(record, [identify_column, calc_avg_column, result_column])
+        return record
     
-    
+
     def get_characters_by_gender_hometown_energy_Projection(self, database_name, gender, hometown, energy_Projection):
         query = f'''SELECT * FROM {database_name}\
                     WHERE gender = "{gender}"\
@@ -85,6 +92,4 @@ class Database:
         
         record = self.query_to_execute(query)
 
-        columns = self.get_tables_column_names(database_name)
-
-        return make_data_as_a_table(record, [*columns])
+        return record
