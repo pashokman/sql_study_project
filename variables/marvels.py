@@ -1,3 +1,5 @@
+MARVELS_TABLE_NAME = 'marvels'
+
 MARVELS_TABLE = """CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     name TEXT,
     popularity INTEGER,
