@@ -31,6 +31,7 @@ INSERT INTO students_grades (student_id, test, grade)
     VALUES (2, "Chemistry", 95);
 '''
 
+
 STUDENTS_PROJECTS_TABLE_NAME = 'students_projects'
 
 STUDENTS_PROJECTS_TABLE = '''CREATE TABLE students_projects (id INTEGER PRIMARY KEY,

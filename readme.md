@@ -20,7 +20,10 @@ Here I practice to interact with the database in SQL using Python.
 * `test_get_both_tables_implicit_inner_join` - test gets data from 2 tables through IMPLICIT INNER JOIN;
 * `test_get_both_tables_explicit_inner_join` - test gets data from 2 tables through EXPLICIT INNER JOIN;
 * `test_create_students_projects_table` - test creates a table `students_projects`;
-* `test_get_both_tables_left_outer_join` - test gets data from 2 tables (`students`, `stidents_projects`) through LEFT OUTER JOIN;
+* `test_get_both_tables_left_outer_join` - test gets data from 2 tables (`students`, `stidents_projects`) through LEFT OUTER JOIN (return all rows from left table even if there is no match vs the right table).
+
+### Movies
+* `test_self_join` - test gets data from one table and JOIN them with the same table.
 
 
 ## What I practice:
@@ -32,4 +35,5 @@ Here I practice to interact with the database in SQL using Python.
 * how to sum values on a column and compare it with expected value (SUM);
 * how to filter table data by some columns (OR);
 * how to count entries of some value in the column (GROUP BY);
-* how to join tables (CROSS JOIN);
+* how to join tables (CROSS JOIN, IMPLICIT INNER JOIN, EXPLICIT INNER JOIN, SELF_JOIN);
+* how to separate methods between different database classes, to make classes more readable and simple.
