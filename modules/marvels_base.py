@@ -3,7 +3,6 @@ from modules.database import Database
 from utilities.list_of_tuples_in_dictionaty import list_of_tuples_in_dictionary
 
 
-
 class Marvels(Database):
 
     def __init__(self):
@@ -36,7 +35,7 @@ class Marvels(Database):
 
 
     def get_parameter_sum_of_all_characters(self, database_name, param):
-        query = f'''SELECT SUM({param}) FROM {database_name}'''
+        query = f'''SELECT SUM({param}) FROM {database_name};'''
         record = self.query_to_execute(query)
         return record[0][0]
     
@@ -61,7 +60,7 @@ class Marvels(Database):
     def get_characters_with_more_popularity_or_more_weight(self, database_name, popularity, weight):
         query = f'''SELECT * FROM {database_name}\
                     WHERE popularity < {popularity}\
-                    OR weight_kg > {weight}'''
+                    OR weight_kg > {weight};'''
         record = self.query_to_execute(query)
 
         return record
@@ -69,8 +68,9 @@ class Marvels(Database):
 
     def group_characters_by_param(self, database_name, param):
         query = f'''SELECT {param}, COUNT(*) FROM {database_name}\
-                    GROUP BY {param}'''
+                    GROUP BY {param};'''
         record = self.query_to_execute(query)
 
         dictionaty = list_of_tuples_in_dictionary(record)
         return dictionaty
+    

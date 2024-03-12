@@ -22,3 +22,7 @@ INSERT INTO movies
 INSERT INTO movies 
     VALUES (8, "Harry Potter and the Deathly Hallows – Part 2", 2011, NULL);
 '''
+
+MOVIES_NEW_ROW = '9, "The Fast & the Furious", 2001, NULL'
+
+MOVIES_NEW_COLUMN_NAME = 'awards'

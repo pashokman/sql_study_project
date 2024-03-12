@@ -8,7 +8,7 @@ class Students(Database):
 
 
     def get_cross_join(self, table1_name, table2_name):
-        query = f'''SELECT * FROM {table1_name}, {table2_name}'''
+        query = f'''SELECT * FROM {table1_name}, {table2_name};'''
         record = self.query_to_execute(query)
         
         return record
@@ -16,7 +16,7 @@ class Students(Database):
 
     def get_implicit_inner_join(self, table1_name, table2_name):
         query = f'''SELECT * FROM {table1_name}, {table2_name}\
-                    WHERE {table1_name}.id = {table2_name}.student_id'''
+                    WHERE {table1_name}.id = {table2_name}.student_id;'''
         record = self.query_to_execute(query)
         
         return record
@@ -25,7 +25,7 @@ class Students(Database):
     def get_explicit_inner_join(self, table1_name, table2_name):
         query = f'''SELECT * FROM {table1_name}\
                     JOIN {table2_name}\
-                    ON {table1_name}.id = {table2_name}.student_id'''
+                    ON {table1_name}.id = {table2_name}.student_id;'''
         record = self.query_to_execute(query)
         
         return record
@@ -37,7 +37,7 @@ class Students(Database):
         query = f'''SELECT {table1_name}.first_name, {table1_name}.last_name, {table2_name}.title\
                     FROM {table1_name}\
                     LEFT OUTER JOIN {table2_name}\
-                    ON {table1_name}.id = {table2_name}.student_id'''
+                    ON {table1_name}.id = {table2_name}.student_id;'''
         record = self.query_to_execute(query)
         
         return record

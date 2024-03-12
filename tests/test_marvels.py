@@ -6,7 +6,7 @@ TABLE_NAME = MARVELS_TABLE_NAME
 
 @pytest.mark.marvels
 def test_connection(marverls):
-    # check connection to sqlite
+    # checks connection to sqlite
     marverls.test_connection()
 
 
@@ -19,7 +19,7 @@ def test_create_marvels_table(marverls):
 
 @pytest.mark.marvels
 def test_get_marvels_table_data(marverls):
-    # get all data from a table
+    # gets all data from a table
     data = marverls.get_all_table_data(TABLE_NAME)
     
     assert len(data) == ALL_CHARACTERS_COUNT, 'Some character is missing (all table)'
@@ -47,7 +47,7 @@ def test_assign_to_characters_intelligence_text_value(marverls):
 
 @pytest.mark.marvels
 def test_filter_characters_by_gender_hometown_energy_Projection(marverls):
-    # filters all table by `gender`, `hometown`, `energy_Projection` values, 
+    # filter all table by `gender`, `hometown`, `energy_Projection` values, 
     # and checks if there are expected characters in it
     data = marverls.get_characters_by_gender_hometown_energy_Projection(TABLE_NAME, 'Female', 'USA', 7)
     
@@ -62,7 +62,7 @@ def test_filter_characters_by_gender_hometown_energy_Projection(marverls):
 @pytest.mark.marvels
 def test_can_all_characters_defeat_one_strong_badguy(marverls):
     # checks if all characters can defeat the badguy 
-    # (if their sum of every passed parameter is greater than same parameter of a badguy)
+    # (if their sum of every passed parameter is greater than the same parameter of a badguy)
     all_characters = marverls.get_few_parameters_sum_of_all_characters(TABLE_NAME, 'intelligence', 'strength', 
                                                                        'speed', 'energy_Projection', 'fighting_Skills')
     print('\n', all_characters)
@@ -73,7 +73,7 @@ def test_can_all_characters_defeat_one_strong_badguy(marverls):
 
 @pytest.mark.marvels
 def test_characters_with_popularity_or_weight(marverls):
-    # test filter characters by popularity or weight
+    # test filters characters by popularity or weight
     data = marverls.get_characters_with_more_popularity_or_more_weight(TABLE_NAME, 10, 100)
 
     assert len(data) == 18, 'Some character is missing in popularity or weight'
@@ -86,6 +86,7 @@ def test_characters_with_popularity_or_weight(marverls):
 
 @pytest.mark.marvels
 def test_group_characters_by_param(marverls):
+    # group characters by parameter
     data = marverls.group_characters_by_param(TABLE_NAME, 'alignment')
     print('\n', data)
     
