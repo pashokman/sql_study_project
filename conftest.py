@@ -1,8 +1,8 @@
 import pytest
 
-from .modules.movies_base import Movies
-from .modules.students_base import Students
-from .modules.marvels_base import Marvels
+from modules.movies_base import Movies
+from modules.students_base import Students
+from modules.marvels_base import Marvels
 
 
 @pytest.fixture
